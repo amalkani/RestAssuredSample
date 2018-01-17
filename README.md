@@ -2,7 +2,7 @@ Testing REST Services using REST-assured
 ========================================================
 
 
-####Objective####
+####**Objective**####
 
 Extensible Framework to support multiple Microservices (for instance , ability to support authentication)
 * Contract Tests which would fail when contract changes
@@ -10,7 +10,7 @@ Extensible Framework to support multiple Microservices (for instance , ability t
 * Fail fast tests that can be run from Jenkins 
 * Externalized property file to help run these tests against any environment
 
-####System Under Test####
+####**System Under Test**####
 
 Testing an environment with Feature Flags:
 
@@ -38,29 +38,29 @@ The three flags are interdependent because they fall under the same namespace (e
 Each team has the option to enable disable the flag for testing in any env but production.
 In production environment all three feature flag belonging to a namespace needs to be enabled for the feature to be enabled.
 
-####Assumptions####
+####**Assumptions**####
 There is a hypothetical service that can create multiple environments
 There is no API to tear down Environments (marked as TBD in tests) 
 There is no  Authentication for these API
 
 
-####Stack####
+####**Stack**####
 This Java (Maven) project has been created using Eclipse Java EE IDE for Web Developers.Version: Oxygen.1a Release (4.7.1a) community edition..
  Tests have been written in JUnit.
 
 
-####Framework Overview####
+####**Framework Overview**####
 The framework consists of three main parts
 
-##Business Objects##
+##**Business Objects**##
      Based on the this example, the two objects in our example are Environment and Feature Flags . 
      RestAssured Framework works seamlessly serializing and deserializing data to these POJO.  
      The whole Business Objects package can be replaced if we can pull these objects from a maven repo.
-##Helpers## 
+##**Helpers**## 
       These contain the RestAssured Logic. The basic RESTAssured Calls are contained in these classes.
       Note there is an entry point to the service to handle authentication (placeholder now).
       Environment properties that are externalized are handled in Helper classes
-##Tests##
+##**Tests**##
       The tests are pure JUNIT tests. The RestAssured magic is abstracted from the test classes. It is pure translation of the "test case" into "Java"
       
          
