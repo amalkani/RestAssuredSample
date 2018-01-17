@@ -78,7 +78,7 @@ public class FeatureFlagHelper {
 	 * @throws NullPointerException
 	 */
 
-	public FeatureFlag update(Environment env, FeatureFlag feature) throws NullPointerException {
+	public FeatureFlag updateFlag(Environment env, FeatureFlag feature) throws NullPointerException {
 		Objects.requireNonNull(env);
 		Objects.requireNonNull(feature);
 
