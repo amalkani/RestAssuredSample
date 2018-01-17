@@ -23,13 +23,13 @@ For example ,
 
 A cross team feature will have collection of feature flags under same namespace to enable a feature. For example:
 
-enableIngest
+*enableIngest
 
-enableIngest.platform
+*enableIngest.platform
 
-enableIngest.dataloader
+*enableIngest.dataloader
 
-enableIngest.hierarchies
+*enableIngest.hierarchies
 
 In the example above 3 teams have defined feature flags  (enableIngest.platform,enableIngest.dataloader, enableIngest.hierarchies)
 
@@ -38,6 +38,10 @@ The three flags are interdependent because they fall under the same namespace (e
 Each team has the option to enable disable the flag for testing in any env but production.
 In production environment all three feature flag belonging to a namespace needs to be enabled for the feature to be enabled.
 
+##Assumptions##
+There is a hypothetical service that can create multiple environments
+There is no API to tear down Environments (marked as TBD in tests) 
+There is no  Authentication for these API
 
 
 ##Stack##
@@ -46,4 +50,16 @@ This Java (Maven) project has been created using Eclipse Java EE IDE for Web Dev
 
 
 ##Framework Overview## 
-
+The framework consists of three main parts
+1) Business Objects -  
+     Based on the this example, the two objects in our example are Environment and Feature Flags . 
+     RestAssured Framework works seamlessly serializing and deserializing data to these POJO.  
+     The whole Business Objects package can be replaced if we can pull these objects from a maven repo.
+2) Helpers - 
+      These contain the RestAssured Logic. The basic RESTAssured Calls are contained in these classes.
+      Note there is an entry point to the service to handle authentication (placeholder now).
+      Environment properties that are externalized are handled in Helper classes
+3) Tests- 
+      The tests are pure JUNIT tests. The RestAssured magic is abstracted from the test classes. It is pure translation of the "test case" into "Java"
+      
+         
