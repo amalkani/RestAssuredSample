@@ -52,15 +52,15 @@ This Java (Maven) project has been created using Eclipse Java EE IDE for Web Dev
 ####**Framework Overview**####
 The framework consists of three main parts
 
-##**Business Objects**##
+*Business Objects*
      Based on the this example, the two objects in our example are Environment and Feature Flags . 
      RestAssured Framework works seamlessly serializing and deserializing data to these POJO.  
      The whole Business Objects package can be replaced if we can pull these objects from a maven repo.
-##**Helpers**## 
+*Helpers*
       These contain the RestAssured Logic. The basic RESTAssured Calls are contained in these classes.
       Note there is an entry point to the service to handle authentication (placeholder now).
       Environment properties that are externalized are handled in Helper classes
-##**Tests**##
+*Tests*
       The tests are pure JUNIT tests. The RestAssured magic is abstracted from the test classes. It is pure translation of the "test case" into "Java"
       
          
