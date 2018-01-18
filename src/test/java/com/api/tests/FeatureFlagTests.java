@@ -216,5 +216,21 @@ public class FeatureFlagTests extends ApiTestsBase {
 	@Test
 	public void getAllFlags_MultipleHeirarchyTest() throws Exception {
 	}
+	
+	@Test
+	public void checkduplicateNameTest() throws Exception {
+	}
+	
 
+	@Test
+	public void checkInvalidEnvironmentName() throws Exception {
+		
+	}
+	
+
+	@Test
+	public void checkInvalidFlagName() throws Exception {
+		
+	}
+	
 }
